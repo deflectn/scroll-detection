@@ -10,15 +10,16 @@ let smoothBlocker = { // macOS
 }
 
 window.addEventListener('wheel', e => {
-	let time = Date.now()
+    let time = Date.now()
+    smoothBlocker.enabled = ((time - smoothBlocker.lastTime) > 9) 
+    smoothBlocker.enabled && (smoothBlocker.lastTime = time)
 	if ((time - lastTime) > 350 && !smoothBlocker.enabled) { // TODO for smooth scroll higher value
 		lastTime = time
 		if (e.deltaY < 0 && index > 0) index--
 		if (e.deltaY > 0 && index < (sections.length - 1)) index++
 		setSection()
     }
-	smoothBlocker.enabled = ((time - smoothBlocker.lastTime) > 9) 
-    smoothBlocker.enabled && (smoothBlocker.lastTime = time)
+	
 })
 
 elevator.max = sections.length - 1
