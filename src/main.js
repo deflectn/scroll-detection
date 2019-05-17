@@ -11,7 +11,7 @@ let smoothBlocker = { // macOS
 
 window.addEventListener('wheel', e => {
 	let time = Date.now()
-	if ((time - lastTime) > 400 && !smoothBlocker.enabled) { // TODO for smooth scroll higher value
+	if ((time - lastTime) > 350 && !smoothBlocker.enabled) { // TODO for smooth scroll higher value
 		lastTime = time
 		if (e.deltaY < 0 && index > 0) index--
 		if (e.deltaY > 0 && index < (sections.length - 1)) index++
