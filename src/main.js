@@ -19,7 +19,6 @@ window.addEventListener('wheel', e => {
     }
 	smoothBlocker.enabled = ((time - smoothBlocker.lastTime) > 9) 
     smoothBlocker.enabled && (smoothBlocker.lastTime = time)
-	console.log(smoothBlocker.enabled)
 })
 
 elevator.max = sections.length - 1
