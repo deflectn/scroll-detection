@@ -1,15 +1,15 @@
 /* TODO transfer to js */
 
-body {
-    overflow: hidden;
-    max-height: 100vh;
-}
-
-body * {
+* {
     margin: 0;
     padding: 0;
     outline: none;
     box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    max-height: 100vh;
 }
 
 #menu {
