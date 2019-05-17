@@ -1,0 +1,46 @@
+/* TODO transfer to js */
+
+body {
+    overflow: hidden;
+    max-height: 100vh;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+#menu {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    transform-origin: left top;
+    transform: rotate(90deg) translate(5vh, -30px);
+}
+
+#menu input {
+    width: 90vh;
+}
+
+#scroll-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: visible;
+    transition: 1.5s all cubic-bezier(0.3, 1, 0, 1);
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.section .content {
+    font-family: sans-serif;
+    font-size: 20vh;
+    color: white;
+    align-self: center;
+}
+  
