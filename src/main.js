@@ -20,10 +20,9 @@ scrollContainer.addEventListener('wheel', e => {
     //     Math.abs(e.deltaY), 
     //     Math.abs(smoothBlocker.lastDelta - e.deltaY))
 
-	if ((time - lastTime) > 350 && !smoothScrollBlocker.enabled) { 
+	if ((time - lastTime) > 350 && !smoothScrollBlocker.enabled) {
         lastTime = time;
-        
-		if (e.deltaY < 0 && index > 0) index--;
+        if (e.deltaY < 0 && index > 0) index--;
         if (e.deltaY > 0 && index < (sections.length - 1)) index++;
         
 		setSection() // desired onscroll event
