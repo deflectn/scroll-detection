@@ -66,6 +66,8 @@ scrollContainer.addEventListener('touchstart', e => {
 });
 
 scrollContainer.addEventListener('touchmove', e => {
+    e.stopPropagation()
+    e.preventDefault()
     touchEndY = e.touches[0].screenY;
 });
 
