@@ -26,7 +26,7 @@ scrollContainer.addEventListener('wheel', e => {
         if (e.deltaY > 0 && index < (sections.length - 1)) index++;
         
         setSection() // desired onscroll event
-        
+
     }
     
     smoothScrollBlocker.enabled = (
@@ -62,7 +62,6 @@ let touchStartY = 0;
 let touchEndY = 0;
 
 scrollContainer.addEventListener('touchstart', e => {
-    console.log(e.touches[0]);
     touchStartY = e.touches[0].screenY;
 });
 
