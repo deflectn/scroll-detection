@@ -3,22 +3,36 @@ const scrollContainer = document.getElementById('scroll-container')
 const elevator = document.getElementById('elevator')
 
 let index = 0
-let lastTime = Date.now() // Windows & Linux
-let smoothBlocker = { // macOS
-	lastTime: Date.now(),
-	enabled: false
+let lastTime = Date.now() 
+let smoothScrollBlocker = { 
+    lastTime: Date.now(),
+    lastDelta: 0,
+    enabled: false
 }
 
 window.addEventListener('wheel', e => {
+
     let time = Date.now()
-    smoothBlocker.enabled = ((time - smoothBlocker.lastTime) > 9) 
-    smoothBlocker.enabled && (smoothBlocker.lastTime = time)
-	if ((time - lastTime) > 350 && !smoothBlocker.enabled) { // TODO for smooth scroll higher value
+
+    // !smoothBlocker.enabled && console.log(smoothBlocker.enabled, 
+    //     (time - smoothBlocker.lastTime), 
+    //     Math.abs(e.deltaY), 
+    //     Math.abs(smoothBlocker.lastDelta - e.deltaY))
+
+	if ((time - lastTime) > 350 && !smoothScrollBlocker.enabled) { 
 		lastTime = time
 		if (e.deltaY < 0 && index > 0) index--
-		if (e.deltaY > 0 && index < (sections.length - 1)) index++
+        if (e.deltaY > 0 && index < (sections.length - 1)) index++
+        
 		setSection()
     }
+    
+    if ((time - smoothScrollBlocker.lastTime) < 349 && Math.abs(smoothScrollBlocker.lastDelta - e.deltaY) < 40 && e.deltaMode == 0) {
+        smoothScrollBlocker.enabled = true
+    } else smoothScrollBlocker.enabled = false
+
+    smoothScrollBlocker.lastTime = time
+    smoothScrollBlocker.lastDelta = e.deltaY
 	
 })
 
