@@ -10,6 +10,19 @@ Most popular wheelevent detection methods/scripts use some kind of hacking or no
 ## Usage
 (integrateable script follow)
 
+## Compatibility
+
+[![](https://img.shields.io/badge/Chrome-^74-green.svg)](#)
+
+[![](https://img.shields.io/badge/Firefox-^66-green.svg)](#)
+
+[![](https://img.shields.io/badge/Safari-^12.1-green.svg)](#)
+
+[![](https://img.shields.io/badge/Edge-^44-green.svg)](#)
+
+[![](https://img.shields.io/badge/IE-^10-yellow.svg)](#) (not tested)
+
+
 ## TODO
 - [ ] refining trigger
 - [ ] check balancing
