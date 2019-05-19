@@ -25,7 +25,8 @@ scrollContainer.addEventListener('wheel', e => {
         if (e.deltaY < 0 && index > 0) index--;
         if (e.deltaY > 0 && index < (sections.length - 1)) index++;
         
-		setSection() // desired onscroll event
+        setSection() // desired onscroll event
+        
     }
     
     smoothScrollBlocker.enabled = (
