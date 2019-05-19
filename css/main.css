@@ -23,13 +23,16 @@ body {
 }
 
 #menu input {
-    width: 90vh;
+    width: 80vh;
 }
 
 #scroll-container {
     width: 100vw;
     height: 100vh;
-    overflow: visible;
+    overflow: hidden;
+}
+
+#scroll-element {
     transition: 1.5s all cubic-bezier(0.3, 1, 0, 1);
 }
 
